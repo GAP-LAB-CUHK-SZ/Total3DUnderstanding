@@ -1,0 +1,26 @@
+ninja_required_version = 1.3
+cxx = c++
+nvcc = /usr/local/cuda/bin/nvcc
+
+cflags = -DTORCH_EXTENSION_NAME=build -DTORCH_API_INCLUDE_EXTENSION_H -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include/torch/csrc/api/include -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include/TH -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include/THC -isystem /usr/local/cuda/include -isystem /home/ynie1/Software/miniconda3/envs/Total3D/include/python3.6m -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++11
+cuda_flags = -DTORCH_EXTENSION_NAME=build -DTORCH_API_INCLUDE_EXTENSION_H -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include/torch/csrc/api/include -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include/TH -isystem /home/ynie1/Software/miniconda3/envs/Total3D/lib/python3.6/site-packages/torch/include/THC -isystem /usr/local/cuda/include -isystem /home/ynie1/Software/miniconda3/envs/Total3D/include/python3.6m -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --compiler-options '-fPIC' -std=c++11
+ldflags = -shared -L/usr/local/cuda/lib64 -lcudart
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out
+  depfile = $out.d
+  deps = gcc
+
+rule cuda_compile
+  command = $nvcc $cuda_flags -c $in -o $out
+
+rule link
+  command = $cxx $in $ldflags -o $out
+
+build chamfer_distance.o: compile /home/ynie1/Projects/Total3DUnderstanding/external/pyTorchChamferDistance/chamfer_distance/chamfer_distance.cpp
+build chamfer_distance.cuda.o: cuda_compile /home/ynie1/Projects/Total3DUnderstanding/external/pyTorchChamferDistance/chamfer_distance/chamfer_distance.cu
+
+build build.so: link chamfer_distance.o chamfer_distance.cuda.o
+
+default build.so
+

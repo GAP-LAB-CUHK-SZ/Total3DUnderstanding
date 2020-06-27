@@ -1,0 +1,55 @@
+method: TOTAL3D
+resume: False
+finetune: True
+weight: ['out/pretrained_models/pretrained_model.pth']
+seed: 123
+device:
+  use_gpu: True
+  gpu_ids: '0'
+  num_workers: 2
+data:
+  dataset: sunrgbd
+  split: data/sunrgbd/splits
+  tmn_subnetworks: 2
+  face_samples: 1
+  with_edge_classifier: True
+model:
+  layout_estimation:
+    method: PoseNet
+    loss: PoseLoss
+  object_detection:
+    method: Bdb3DNet
+    loss: DetLoss
+  mesh_reconstruction:
+    method: DensTMNet
+    loss: ReconLoss
+optimizer:
+  method: Adam
+  lr: 1e-4
+  betas: [0.9, 0.999]
+  eps: 1e-08
+  weight_decay: 1e-04
+scheduler:
+  patience: 5
+  factor: 0.5
+  threshold: 0.01
+train:
+  epochs: 400
+  phase: 'joint' # 'layout_estimation' or 'object_detection' or 'joint'.
+  freeze: ['mesh_reconstruction']
+  batch_size: 2
+test:
+  phase: 'joint'
+  batch_size: 2
+demo:
+  phase: 'joint'
+log:
+  vis_path: visualization
+  save_results: True
+  vis_step: 100
+  print_step: 50
+  path: out/total3d
+
+
+
+

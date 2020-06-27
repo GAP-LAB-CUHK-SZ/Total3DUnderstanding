@@ -1,0 +1,49 @@
+method: MGNet
+resume: False
+finetune: True
+weight: ['out/pretrained_models/meshnet_model.pth']
+seed: 123
+device:
+  use_gpu: True
+  gpu_ids: '0'
+  num_workers: 2
+data:
+  dataset: pix3d
+  split: data/pix3d/splits
+  tmn_subnetworks: 2
+  face_samples: 1
+  with_edge_classifier: True
+model:
+  mesh_reconstruction:
+    method: DensTMNet
+    loss: SVRLoss
+optimizer:
+  method: Adam
+  lr: 1e-4
+  betas: [0.9, 0.999]
+  eps: 1e-08
+  weight_decay: 1e-04
+scheduler:
+  patience: 2
+  factor: 0.5
+  threshold: 0.001
+train:
+  epochs: 400
+  phase: 'all'
+  freeze: []
+  batch_size: 2
+test:
+  phase: 'all'
+  batch_size: 2
+demo:
+  phase: 'all'
+log:
+  vis_path: visualization
+  save_results: True
+  vis_step: 100
+  print_step: 50
+  path: out/mgnet
+
+
+
+
