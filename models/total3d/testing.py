@@ -185,8 +185,6 @@ class Tester(BaseTester, Trainer):
                     write_obj(file_path, mesh_obj)
 
         metrics = {}
-        metrics['pitch_error'] = pitch_error.item()
-        metrics['roll_error'] = roll_error.item()
         metrics['layout_iou'] = np.mean(layout_iou)
         metrics['iou_3d'] = IoU3D
         metrics['iou_2d'] = IoU2D
