@@ -1,3 +1,5 @@
+import sys
+sys.path.append('.')
 import argparse
 from utils.sunrgbd_config import SUNRGBD_CONFIG
 import os
@@ -217,8 +219,8 @@ class Box(Scene3D):
         img_map.show()
 
         if if_save:
-            if not os.path.exists(save_path):
-                os.makedirs(save_path)
+            if not os.path.exists(os.path.dirname(save_path)):
+                os.makedirs(os.path.dirname(save_path))
             img_map.save(save_path)
 
     def get_bbox_actor(self, box, color, opacity):
@@ -380,8 +382,8 @@ class Box(Scene3D):
         render_window_interactor.Start()
 
         if if_save:
-            if not os.path.exists(save_path):
-                os.makedirs(save_path)
+            if not os.path.exists(os.path.dirname(save_path)):
+                os.makedirs(os.path.dirname(save_path))
             im = vtk.vtkWindowToImageFilter()
             writer = vtk.vtkPNGWriter()
             im.SetInput(render_window)
