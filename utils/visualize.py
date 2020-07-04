@@ -217,6 +217,8 @@ class Box(Scene3D):
         img_map.show()
 
         if if_save:
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
             img_map.save(save_path)
 
     def get_bbox_actor(self, box, color, opacity):
@@ -378,6 +380,8 @@ class Box(Scene3D):
         render_window_interactor.Start()
 
         if if_save:
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
             im = vtk.vtkWindowToImageFilter()
             writer = vtk.vtkPNGWriter()
             im.SetInput(render_window)
