@@ -77,11 +77,23 @@ python utils/generate_data.py
 
 
 ##### Preprocess Pix3D data
-Please download the preprocessed ground-truth data [[link](https://livebournemouthac-my.sharepoint.com/:u:/g/personal/ynie_bournemouth_ac_uk/EWR0YQN_BjBMg6XbgzHcWg4BpNZywXGSMI-1VnnWZ1CFyg?e=TYhUv8)] to
+You can either directly download the preprocessed ground-truth data [[link](https://livebournemouthac-my.sharepoint.com/:u:/g/personal/ynie_bournemouth_ac_uk/EWR0YQN_BjBMg6XbgzHcWg4BpNZywXGSMI-1VnnWZ1CFyg?e=TYhUv8)] to (recommended)
 ```
 data/pix3d/train_test_data
 ```
 Each sample contains the object class, 3D points (sampled on meshes), sample id and object image (w.o. mask). Samples in the training set are flipped for augmentation.
+
+or <br>
+<br>
+
+1. Download the [Pix3D dataset](http://pix3d.csail.mit.edu/) to 
+```
+data/pix3d/metadata
+```
+2. Run below to generate the train/test data into 'data/pix3d/train_test_data'
+```
+python utils/preprocess_pix3d.py
+```
 
 ---
 ### Training and Testing

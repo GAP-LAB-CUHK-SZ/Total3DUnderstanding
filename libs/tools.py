@@ -91,6 +91,15 @@ def sample_pnts_from_obj(data, n_pnts = 5000, mode = 'uniform'):
 
     return random_pnts
 
+def normalize_to_unit_square(points):
+    centre = (points.max(0) + points.min(0))/2.
+    point_shapenet = points - centre
+
+    scale = point_shapenet.max()
+    point_shapenet = point_shapenet / scale
+
+    return point_shapenet, centre, scale
+
 def read_obj(model_path, flags = ('v')):
     fid = open(model_path, 'r')
 
