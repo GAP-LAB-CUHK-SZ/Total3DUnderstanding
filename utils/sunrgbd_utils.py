@@ -185,8 +185,14 @@ def get_corners_of_bb3d_no_index(basis, coeffs, centroid):
 def read_seg2d_data(seg2d_path):
 
     # load seg 2d data.
-    with open(seg2d_path, encoding='utf-8') as data_file:
-        seg2d_data = json.load(data_file)
+    try:
+        with open(seg2d_path, encoding='utf-8') as data_file:
+            seg2d_data = json.load(data_file)
+    except:
+        with open(seg2d_path, 'r') as data_file:
+            content = data_file.readlines()[0]
+            content=content.replace("\\", "")
+            seg2d_data = json.loads(content)
 
     number_of_anot = len(seg2d_data["frames"][0]["polygon"])
 
