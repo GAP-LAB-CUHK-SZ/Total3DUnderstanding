@@ -188,11 +188,15 @@ def read_seg2d_data(seg2d_path):
     try:
         with open(seg2d_path, encoding='utf-8') as data_file:
             seg2d_data = json.load(data_file)
-    except:
+    except Exception as err:
         with open(seg2d_path, 'r') as data_file:
             content = data_file.readlines()[0]
-            content=content.replace("\\", "")
-            seg2d_data = json.loads(content)
+        if "\\" in content:
+            error_string = "\\"
+        else:
+            error_string = content[err.pos - 1:err.pos + 7]
+        content = content.replace(error_string, "")
+        seg2d_data = json.loads(content)
 
     number_of_anot = len(seg2d_data["frames"][0]["polygon"])
 
