@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ---
 
 ### Demo
-The pretrained model can be download [here](https://livebournemouthac-my.sharepoint.com/:u:/g/personal/ynie_bournemouth_ac_uk/EWuyQXemB25Gq5ssOZfFKyQBA7w2URXR3HLvjJiKkChaiA?e=0Zk9n0). We also provide the pretrained Mesh Generation Net [here](https://livebournemouthac-my.sharepoint.com/:u:/g/personal/ynie_bournemouth_ac_uk/EcbwpViMFQNCluHzWF8P5-gBFjVWjlqp9v3aK4BE41M3Gw?e=cX98bJ). Put the pretrained models under
+The pretrained model can be download [here](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/EZ0L-aDmX9hMh32-N99zby4Bn4iwI37rsr32VvDt1u1uzg?e=8ZsaRc). We also provide the pretrained Mesh Generation Net [here](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/EW7QpZIGUkxGtUdBwkPi9BQBn1oODQKPb08uuFI1LiSoNw?e=h2wYee). Put the pretrained models under
 ```
 out/pretrained_models
 ```
@@ -43,7 +43,7 @@ In our paper, we use [SUN-RGBD](https://rgbd.cs.princeton.edu/) to train our Lay
 
 ##### Preprocess SUN-RGBD data
 
-You can either directly download the processed training/testing data [[link](https://livebournemouthac-my.sharepoint.com/:u:/g/personal/ynie_bournemouth_ac_uk/EcA66Nb1aI1KitzX7avbE10BiHGzovf3rqQebeJHmFB4QA?e=4hE8zv)] to (recommended)
+You can either directly download the processed training/testing data [[link](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/Ef_cwoqSdA1DlpjcEk8PAfIBiutQTW8w6yRTlBJoGRxy5w?e=YgZqqr)] to (recommended)
 ```
 data/sunrgbd/sunrgbd_train_test_data
 ```
@@ -77,7 +77,7 @@ python utils/generate_data.py
 
 
 ##### Preprocess Pix3D data
-You can either directly download the preprocessed ground-truth data [[link](https://livebournemouthac-my.sharepoint.com/:u:/g/personal/ynie_bournemouth_ac_uk/EWR0YQN_BjBMg6XbgzHcWg4BpNZywXGSMI-1VnnWZ1CFyg?e=TYhUv8)] to (recommended)
+You can either directly download the preprocessed ground-truth data [[link](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/EU8a4LCAnCVMj7Gi9fys4LEBNtGlO42ZmB-zgX7ovL3VIQ?e=EriXDW)] to (recommended)
 ```
 data/pix3d/train_test_data
 ```
