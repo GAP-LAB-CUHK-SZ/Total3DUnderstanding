@@ -24,4 +24,4 @@ Shapely==1.7.0
 six==1.15.0
 torch==1.1.0
 torchvision==0.3.0
-vtk==8.2.0
+vtk==9.0.1
