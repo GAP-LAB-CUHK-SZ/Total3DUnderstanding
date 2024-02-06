@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ---
 
 ### Demo
-The pretrained model can be download [here](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/EZ0L-aDmX9hMh32-N99zby4Bn4iwI37rsr32VvDt1u1uzg?e=KYpWDp). We also provide the pretrained Mesh Generation Net [here](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/EW7QpZIGUkxGtUdBwkPi9BQBn1oODQKPb08uuFI1LiSoNw?e=7RF7S0). Put the pretrained models under
+The pretrained model can be download [here](https://drive.google.com/file/d/1Znrge0-oBZqnknGbgCVOdwDtWLPZzQ0F/view?usp=sharing). We also provide the pretrained Mesh Generation Net [here](https://drive.google.com/file/d/10sVx2lrV3R3SDg3LDRlSE6_-QphWXGMX/view?usp=sharing). Put the pretrained models under
 ```
 out/pretrained_models
 ```
