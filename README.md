@@ -43,7 +43,7 @@ In our paper, we use [SUN-RGBD](https://rgbd.cs.princeton.edu/) to train our Lay
 
 ##### Preprocess SUN-RGBD data
 
-You can either directly download the processed training/testing data [[link](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/Ef_cwoqSdA1DlpjcEk8PAfIBiutQTW8w6yRTlBJoGRxy5w?e=cTsMr2)] to (recommended)
+You can either directly download the processed training/testing data [[link](https://drive.google.com/file/d/1tWbR3w2g1KFziA5pRmLHn5QIryKnaa_T/view?usp=sharing)] to (recommended)
 ```
 data/sunrgbd/sunrgbd_train_test_data
 ```
@@ -77,7 +77,7 @@ python utils/generate_data.py
 
 
 ##### Preprocess Pix3D data
-You can either directly download the preprocessed ground-truth data [[link](https://tumde-my.sharepoint.com/:u:/g/personal/yinyu_nie_tum_de/EU8a4LCAnCVMj7Gi9fys4LEBNtGlO42ZmB-zgX7ovL3VIQ?e=wNlJK6)] to (recommended)
+You can either directly download the preprocessed ground-truth data [[link](https://drive.google.com/file/d/1pJImyRFNQXppDAMOsNG80quxk6mLw1Pl/view?usp=sharing)] to (recommended)
 ```
 data/pix3d/train_test_data
 ```
