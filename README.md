@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ---
 
 ### Demo
-The pretrained model can be download [here](https://drive.google.com/file/d/1Znrge0-oBZqnknGbgCVOdwDtWLPZzQ0F/view?usp=sharing). We also provide the pretrained Mesh Generation Net [here](https://drive.google.com/file/d/10sVx2lrV3R3SDg3LDRlSE6_-QphWXGMX/view?usp=sharing). Put the pretrained models under
+The pretrained model can be download [here](https://cuhko365.sharepoint.com/:u:/s/CUHKSZ_SSE_GAP-Lab2/EfU0ElYyJ9JFjLL8qolLLLkBNXx6DxkyA4lVAhuMfmSnIw?e=dSScnc). We also provide the pretrained Mesh Generation Net [here](https://cuhko365.sharepoint.com/:u:/s/CUHKSZ_SSE_GAP-Lab2/EeC4Fqo_W2xJiG2-S6y_7F8BDtJ65eGGNprMvfq6nikRGw?e=qzTyfX). Put the pretrained models under
 ```
 out/pretrained_models
 ```
@@ -43,7 +43,7 @@ In our paper, we use [SUN-RGBD](https://rgbd.cs.princeton.edu/) to train our Lay
 
 ##### Preprocess SUN-RGBD data
 
-You can either directly download the processed training/testing data [[link](https://drive.google.com/file/d/1tWbR3w2g1KFziA5pRmLHn5QIryKnaa_T/view?usp=sharing)] to (recommended)
+You can either directly download the processed training/testing data [[link](https://cuhko365.sharepoint.com/:u:/s/CUHKSZ_SSE_GAP-Lab2/EdcyVWe5CLNKlsCnSYbkIy8BfMYmxL9iKqJHWAt0DkF1yw?e=4Eat3A)] to (recommended)
 ```
 data/sunrgbd/sunrgbd_train_test_data
 ```
@@ -77,7 +77,7 @@ python utils/generate_data.py
 
 
 ##### Preprocess Pix3D data
-You can either directly download the preprocessed ground-truth data [[link](https://drive.google.com/file/d/1pJImyRFNQXppDAMOsNG80quxk6mLw1Pl/view?usp=sharing)] to (recommended)
+You can either directly download the preprocessed ground-truth data [[link](https://cuhko365.sharepoint.com/:u:/s/CUHKSZ_SSE_GAP-Lab2/ESM1-BvjC-5Np1xxj8QUNQ8Bv58zJyGqWHuRwgm5Pnf1AA?e=RYzy8L)] to (recommended)
 ```
 data/pix3d/train_test_data
 ```
